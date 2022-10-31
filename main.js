@@ -68,6 +68,8 @@ function click() {
 }
 
 function drawGame() {
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, cnv.width, cnv.height);
+
+    ctx.fillStyle = "";
 }
