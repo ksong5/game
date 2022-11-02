@@ -7,8 +7,9 @@ cnv.width = 800;
 cnv.height = 800;
 ctx.translate(400, 400);
 
-//mouse coordinates
+//mouse coordinates / angle
 let mouseX, mouseY;
+let angle;
 
 // mousehandlers
 document.addEventListener("mousemove", mousemoveHandler);
@@ -70,8 +71,6 @@ function click() {
 }
 
 function drawGame() {
-    ctx.rotate(10 * Math.PI / 180);
-
     ctx.fillStyle = "white";
     ctx.fillRect(-200, -200, cnv.width, cnv.height);
 
@@ -81,11 +80,16 @@ function drawGame() {
 
     ctx.fillStyle = "grey";
     ctx.fillRect(-10, 0, 20, 70);
+
+    angleCalc();
+    console.log(angle);
 }
 
-// setInterval(angleCalc, 100);
+function point() {
+    ctx.rotate(1 * Math.PI / 180);
+}
 
-// function angleCalc(mouseX, mouseY) {
-//     Math.atan2(mouseX, mouseY) * 180 / Math.PI;
-// }
-
+function angleCalc() {
+    angle = Math.atan2(mouseY - cnv.height / 2, mouseX - cnv.width / 2) * 180 / Math.PI;
+    angle *= -1;
+}
