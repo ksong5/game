@@ -85,8 +85,8 @@ function drawGame() {
     console.log(angle);
 }
 
-function point() {
-    ctx.rotate(1 * Math.PI / 180);
+function drawBarrel() {
+    
 }
 
 function angleCalc() {
